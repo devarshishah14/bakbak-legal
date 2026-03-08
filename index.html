@@ -12,13 +12,11 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     line-height: 1.8;
-    padding: 0;
   }
-
   header {
-    background: #111;
+    background: #111111;
     border-bottom: 1px solid #1E1E1E;
-    padding: 24px 32px;
+    padding: 20px 32px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -38,85 +36,51 @@
     color: white;
     font-size: 14px;
     letter-spacing: -1px;
+    flex-shrink: 0;
   }
   .logo-text { font-size: 20px; font-weight: 800; color: #F0F0F0; letter-spacing: -0.5px; }
   .logo-text span { color: #FF5C00; }
-
-  nav {
-    margin-left: auto;
-    display: flex;
-    gap: 6px;
-  }
+  nav { margin-left: auto; display: flex; gap: 6px; }
   nav a {
     color: #666;
     text-decoration: none;
     font-size: 13px;
-    padding: 6px 14px;
+    padding: 6px 16px;
     border-radius: 20px;
     border: 1px solid #222;
-    transition: all 0.2s;
+    cursor: pointer;
+    transition: all 0.15s;
   }
-  nav a:hover, nav a.active {
-    color: #FF5C00;
-    border-color: #FF5C0040;
-    background: #FF5C0010;
-  }
-
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 56px 32px 100px;
-  }
-
+  nav a:hover { color: #FF5C00; border-color: #FF5C0040; background: #FF5C0010; }
+  nav a.active { color: #FF5C00; border-color: #FF5C0060; background: #FF5C0015; font-weight: 700; }
+  .container { max-width: 720px; margin: 0 auto; padding: 56px 32px 100px; }
   .section { display: none; }
   .section.active { display: block; }
-
-  .doc-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #F0F0F0;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
-  }
-  .doc-meta {
-    color: #444;
-    font-size: 13px;
-    margin-bottom: 48px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #1A1A1A;
-  }
+  .doc-title { font-size: 32px; font-weight: 800; color: #F0F0F0; letter-spacing: -1px; margin-bottom: 8px; }
+  .doc-meta { color: #444; font-size: 13px; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #1A1A1A; }
   .doc-meta span { color: #FF5C00; }
-
-  h2 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #F0F0F0;
-    margin: 36px 0 12px;
-    padding-left: 12px;
-    border-left: 3px solid #FF5C00;
-  }
+  h2 { font-size: 16px; font-weight: 700; color: #F0F0F0; margin: 36px 0 12px; padding-left: 12px; border-left: 3px solid #FF5C00; }
   p { color: #888; margin-bottom: 14px; }
-  ul { color: #888; padding-left: 20px; margin-bottom: 14px; }
-  ul li { margin-bottom: 6px; }
+  ul { color: #888; padding-left: 22px; margin-bottom: 14px; }
+  ul li { margin-bottom: 8px; }
   strong { color: #AAAAAA; }
-  a { color: #FF5C00; text-decoration: none; }
-
+  .email-link { color: #FF5C00; }
   .highlight-box {
     background: #FF5C0010;
     border: 1px solid #FF5C0025;
     border-radius: 12px;
     padding: 16px 20px;
-    margin: 24px 0;
+    margin: 0 0 32px;
     color: #AAAAAA;
     font-size: 14px;
+    line-height: 1.7;
   }
   .highlight-box strong { color: #FF5C00; }
-
-  footer {
+  .doc-footer {
     text-align: center;
     color: #333;
     font-size: 12px;
-    margin-top: 60px;
+    margin-top: 64px;
     padding-top: 24px;
     border-top: 1px solid #1A1A1A;
   }
@@ -128,33 +92,35 @@
   <div class="logo-mark">BB</div>
   <span class="logo-text">Bak<span>Bak</span></span>
   <nav>
-    <a href="#" class="active" onclick="show('privacy', this)">Privacy Policy</a>
-    <a href="#" onclick="show('terms', this)">Terms of Use</a>
+    <a class="active" onclick="show('privacy', this)">Privacy Policy</a>
+    <a onclick="show('terms', this)">Terms of Use</a>
   </nav>
 </header>
 
 <div class="container">
 
-  <!-- ═══ PRIVACY POLICY ═══ -->
+  <!-- PRIVACY POLICY -->
   <div id="privacy" class="section active">
+
     <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Last updated: <span>March 2026</span> · BakBak by Devarshi Shah</p>
+    <p class="doc-meta">Last updated: <span>March 2026</span> &nbsp;·&nbsp; BakBak by Devarshi Shah</p>
 
     <div class="highlight-box">
-      <strong>The short version:</strong> BakBak is built to be anonymous. We never collect your real name or photo. We use your location only to show you nearby posts. We don't sell your data to anyone, ever.
+      <strong>The short version:</strong> BakBak is built to be anonymous. We never collect your real name or photo. We use your location only to show you nearby posts. We do not sell your data to anyone, ever.
     </div>
 
     <h2>1. Who We Are</h2>
-    <p>BakBak ("we", "our", "the app") is an anonymous hyperlocal social app developed by Devarshi Shah. This Privacy Policy explains how we handle information when you use BakBak on iOS or Android.</p>
+    <p>BakBak ("we", "our", "the app") is an anonymous hyperlocal social app developed by Devarshi Shah, based in Mumbai, India. This Privacy Policy explains how we collect, use, and protect information when you use BakBak on iOS or Android.</p>
 
     <h2>2. Information We Collect</h2>
-    <p>We collect only what is necessary to run the app:</p>
+    <p>We collect only the minimum information necessary to run the app:</p>
     <ul>
-      <li><strong>Google Account ID</strong> — used solely to authenticate you. We never see or store your real name, email, or profile photo from Google.</li>
+      <li><strong>Google Account ID</strong> — used solely to authenticate you. We never see or store your real name, email address, or profile photo from Google.</li>
       <li><strong>Apple Account ID</strong> — same as above for Apple Sign In users.</li>
-      <li><strong>Location data</strong> — your approximate GPS coordinates are used in real time to show you posts within 1km. We store only a geohash (a coded version of your location) alongside your posts — never your exact coordinates permanently.</li>
+      <li><strong>Location data</strong> — your approximate GPS coordinates are used in real time to show you posts within 1km of your current position. We store only a geohash (a privacy-safe encoded version of your location) alongside your posts — never your exact coordinates permanently.</li>
       <li><strong>Posts and votes</strong> — the content you post and votes you cast are stored in our database linked to your anonymous user ID, not your real identity.</li>
-      <li><strong>Aura score</strong> — your in-app reputation score, stored anonymously.</li>
+      <li><strong>Aura score</strong> — your in-app reputation score, stored anonymously and never linked to your real identity.</li>
+      <li><strong>Daily post count</strong> — a counter to enforce the 5 posts per day limit. This resets every 24 hours.</li>
     </ul>
 
     <h2>3. Information We Do NOT Collect</h2>
@@ -163,101 +129,159 @@
       <li>Your email address</li>
       <li>Your profile photo</li>
       <li>Your phone number</li>
-      <li>Your precise permanent location history</li>
+      <li>Your permanent or historical location</li>
       <li>Any payment or financial information</li>
+      <li>Device contacts, camera, or microphone data</li>
+      <li>Any biometric data</li>
     </ul>
 
     <h2>4. How We Use Your Information</h2>
     <ul>
       <li>To show you anonymous posts from people within 1km of your current location</li>
-      <li>To allow you to post anonymously</li>
-      <li>To calculate and display your Aura score</li>
-      <li>To enforce daily post limits and prevent abuse</li>
-      <li>To hide or remove content that is reported by multiple users</li>
-    </ul>
-
-    <h2>5. Data Storage</h2>
-    <p>Your data is stored securely using Google Firebase (Firestore), hosted in the asia-south1 (Mumbai) region. All posts automatically expire and are deleted after 24 hours. User accounts and Aura scores are retained until you delete your account.</p>
-
-    <h2>6. Data Sharing</h2>
-    <p>We do not sell, rent, or share your personal data with any third parties for advertising or marketing purposes. We use the following services to operate the app:</p>
-    <ul>
-      <li><strong>Google Firebase</strong> — authentication and database</li>
-      <li><strong>Google Sign In / Apple Sign In</strong> — authentication only</li>
-    </ul>
-
-    <h2>7. Your Rights</h2>
-    <p>You can delete your account and all associated data at any time from within the app (My Aura → Delete Account). This permanently removes your profile, Aura score, and all posts.</p>
-
-    <h2>8. Children's Privacy</h2>
-    <p>BakBak is not intended for users under the age of 17. We do not knowingly collect data from children. If you believe a child has used our app, please contact us and we will delete the account.</p>
-
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify users of significant changes through the app. Continued use of BakBak after changes constitutes acceptance of the updated policy.</p>
-
-    <h2>10. Contact</h2>
-    <p>For any privacy-related questions, contact us at: <a href="/cdn-cgi/l/email-protection#295a40445c5d464450181d694e44484045074a4644"><span class="__cf_email__" data-cfemail="d2a1bbbfa7a6bdbfabe3e692b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a></p>
-
-    <footer>© 2026 BakBak by Devarshi Shah · All rights reserved</footer>
-  </div>
-
-  <!-- ═══ TERMS OF USE ═══ -->
-  <div id="terms" class="section">
-    <h1 class="doc-title">Terms of Use</h1>
-    <p class="doc-meta">Last updated: <span>March 2026</span> · BakBak by Devarshi Shah</p>
-
-    <div class="highlight-box">
-      <strong>The short version:</strong> Be respectful. Don't post harmful, illegal, or abusive content. BakBak is anonymous — don't abuse that freedom to hurt others.
-    </div>
-
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading or using BakBak, you agree to these Terms of Use. If you do not agree, please do not use the app.</p>
-
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 17 years old to use BakBak. By using the app, you confirm that you meet this requirement.</p>
-
-    <h2>3. Anonymous Use</h2>
-    <p>BakBak is designed for anonymous posting. While your real identity is not shown to other users, your anonymous account is still linked to your authentication provider (Google or Apple). This means we can take action against accounts that violate these Terms, even anonymously.</p>
-
-    <h2>4. Prohibited Content</h2>
-    <p>You may not post content that:</p>
-    <ul>
-      <li>Is hateful, discriminatory, or targets individuals based on religion, caste, gender, sexuality, or ethnicity</li>
-      <li>Threatens, harasses, or bullies any individual or group</li>
-      <li>Contains sexually explicit or NSFW (Not Safe For Work) material of any kind</li>
-      <li>Shares personal or private information about another person without consent (doxxing)</li>
-      <li>Promotes or facilitates illegal activity</li>
-      <li>Contains misinformation that could cause public harm</li>
-      <li>Is spam or repetitive commercial content</li>
-      <li>Impersonates any person or organisation</li>
+      <li>To allow you to post content anonymously</li>
+      <li>To calculate and display your Aura reputation score</li>
+      <li>To enforce daily post limits (5 posts per day) and prevent abuse</li>
+      <li>To automatically hide content that has been reported 5 or more times by other users</li>
+      <li>To maintain app security and prevent fraudulent activity</li>
     </ul>
 
     <h2>5. Content Moderation</h2>
-    <p>Every post on BakBak has a 🚩 report button visible to all users. Posts that receive 5 or more reports are <strong>automatically hidden</strong> from all feeds immediately — no manual review required.</p>
-    <p>We reserve the right to permanently remove any content that violates these Terms and to suspend or permanently ban accounts that repeatedly violate them. Severe violations (threats, CSAM, doxxing) will be reported to appropriate authorities.</p>
-    <p><strong>What counts as a reportable post:</strong> spam, hate speech, misinformation, sexually explicit content, threats, or personal information shared without consent.</p>
+    <p>Every post on BakBak has a 🚩 report button visible to all users. Posts that receive 5 or more reports are automatically hidden from all feeds immediately. We review severely reported content and reserve the right to permanently delete posts and ban accounts that violate our Terms of Use.</p>
+    <p>We do not use automated content scanning at this time. Moderation is community-driven through the reporting system.</p>
+
+    <h2>6. Data Storage and Security</h2>
+    <p>Your data is stored securely using Google Firebase (Firestore), hosted in the asia-south1 (Mumbai) region. We use industry-standard security practices to protect your data. All posts automatically expire and are permanently deleted after 24 hours. User accounts and Aura scores are retained until you choose to delete your account.</p>
+
+    <h2>7. Data Sharing</h2>
+    <p>We do not sell, rent, trade, or share your personal data with any third parties for advertising or marketing purposes. We use the following third-party services solely to operate the app:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — secure database and user authentication</li>
+      <li><strong>Google Sign In</strong> — authentication only, no profile data is accessed</li>
+      <li><strong>Apple Sign In</strong> — authentication only, no profile data is accessed</li>
+    </ul>
+
+    <h2>8. Your Rights and Controls</h2>
+    <p>You have full control over your data:</p>
+    <ul>
+      <li><strong>Delete your account</strong> — available anytime from within the app (My Aura tab → Delete Account). This permanently and irreversibly removes your profile, Aura score, post history, and all associated data.</li>
+      <li><strong>Revoke location access</strong> — you can turn off location permissions in your phone settings at any time. Note that the app requires location to function.</li>
+      <li><strong>Data requests</strong> — you may contact us to request a copy of your data or to ask questions about what we store.</li>
+    </ul>
+
+    <h2>9. Children's Privacy</h2>
+    <p>BakBak is strictly not intended for users under the age of 17. We do not knowingly collect any data from children. If you believe a child has created an account, please contact us immediately at the email below and we will delete the account and all associated data promptly.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time as the app evolves. We will notify users of significant changes through an in-app notice. Your continued use of BakBak after any changes constitutes your acceptance of the updated policy. The "Last updated" date at the top of this page will always reflect the most recent revision.</p>
+
+    <h2>11. Contact Us</h2>
+    <p>For any privacy-related questions, data requests, or concerns, please contact:</p>
+    <ul>
+      <li><strong>Developer:</strong> Devarshi Shah</li>
+      <li><strong>App:</strong> BakBak</li>
+      <li><strong>Email:</strong> <a class="email-link" href="mailto:simutomy14@gmail.com">simutomy14@gmail.com</a></li>
+    </ul>
+
+    <div class="doc-footer">
+      &copy; 2026 BakBak by Devarshi Shah &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Mumbai, India
+    </div>
+
+  </div>
+
+  <!-- TERMS OF USE -->
+  <div id="terms" class="section">
+
+    <h1 class="doc-title">Terms of Use</h1>
+    <p class="doc-meta">Last updated: <span>March 2026</span> &nbsp;·&nbsp; BakBak by Devarshi Shah</p>
+
+    <div class="highlight-box">
+      <strong>The short version:</strong> Be respectful. Do not post harmful, illegal, or abusive content. BakBak is anonymous — do not abuse that freedom to hurt others. Violations will result in account suspension or permanent ban.
+    </div>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using BakBak ("the app"), you agree to be bound by these Terms of Use. If you do not agree with any part of these Terms, you must not use the app.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>You must be at least 17 years of age to use BakBak. By using the app, you confirm that you are 17 or older. If we discover that a user is under 17, we will immediately terminate their account and delete all associated data.</p>
+
+    <h2>3. Anonymous Use Policy</h2>
+    <p>BakBak is designed for anonymous posting. While your real identity is not visible to other users, your anonymous account is linked to your authentication provider (Google or Apple). This means we retain the ability to take action against accounts that violate these Terms — including account suspension and permanent bans — even under the veil of anonymity. Anonymity is a feature, not a shield for harmful behaviour.</p>
+
+    <h2>4. Prohibited Content</h2>
+    <p>You may not post, share, or promote content on BakBak that:</p>
+    <ul>
+      <li>Is hateful, discriminatory, or targets individuals or groups based on religion, caste, gender, sexual orientation, ethnicity, nationality, or disability</li>
+      <li>Threatens, harasses, intimidates, or bullies any individual or group</li>
+      <li>Contains sexually explicit, pornographic, or NSFW (Not Safe For Work) material of any kind</li>
+      <li>Shares personal or private information about another person without their explicit consent (doxxing)</li>
+      <li>Promotes, glorifies, or facilitates illegal activity under Indian law or international law</li>
+      <li>Contains deliberate misinformation or false information that could cause public harm, incite panic, or endanger lives</li>
+      <li>Is spam, repetitive, or unsolicited commercial advertising</li>
+      <li>Impersonates any real person, organisation, government body, or other entity</li>
+      <li>Exploits or endangers minors in any way</li>
+      <li>Incites violence, terrorism, or civil unrest</li>
+      <li>Violates any applicable local, state, national, or international law or regulation</li>
+    </ul>
+
+    <h2>5. Content Reporting and Moderation</h2>
+    <p>Every post on BakBak displays a 🚩 report button. Any user can report a post for the following reasons: Spam, Hate Speech, or Misinformation.</p>
+    <ul>
+      <li><strong>Auto-hide:</strong> Posts that receive 5 or more reports are automatically hidden from all feeds immediately, without manual review.</li>
+      <li><strong>Manual review:</strong> We reserve the right to review reported content and permanently delete posts that violate these Terms.</li>
+      <li><strong>Account action:</strong> Users who repeatedly violate these Terms may face temporary suspension or permanent ban of their account.</li>
+      <li><strong>Severe violations:</strong> Content involving threats of violence, child exploitation, or criminal activity will be reported to the appropriate Indian or international authorities.</li>
+    </ul>
 
     <h2>6. Your Content</h2>
-    <p>You retain ownership of the content you post. By posting on BakBak, you grant us a limited, non-exclusive licence to store and display that content within the app. All posts are automatically deleted after 24 hours.</p>
+    <p>You retain full ownership of the content you post on BakBak. By posting, you grant BakBak a limited, non-exclusive, royalty-free licence to store, display, and distribute that content solely within the app to other nearby users. This licence terminates automatically when your post expires (after 24 hours) or when you delete your account.</p>
+    <p>You are solely responsible for the content you post. BakBak is not liable for user-generated content.</p>
 
-    <h2>7. Disclaimer of Warranties</h2>
-    <p>BakBak is provided "as is" without warranties of any kind. We do not guarantee that the app will be error-free or available at all times. We are not responsible for the content posted by other users.</p>
+    <h2>7. Intellectual Property</h2>
+    <p>The BakBak name, logo, design, and all original app content are the intellectual property of Devarshi Shah. You may not reproduce, copy, or use any BakBak branding or design without explicit written permission.</p>
 
-    <h2>8. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, BakBak and Devarshi Shah shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app or content posted by other users.</p>
+    <h2>8. Disclaimer of Warranties</h2>
+    <p>BakBak is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. We do not guarantee that the app will be uninterrupted, error-free, or free from harmful components. We are not responsible for the accuracy, legality, or appropriateness of content posted by other users.</p>
 
-    <h2>9. Governing Law</h2>
-    <p>These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Mumbai, Maharashtra.</p>
+    <h2>9. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, BakBak and its developer Devarshi Shah shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, loss of profits, or damages resulting from your use of the app or from content posted by other users.</p>
 
-    <h2>10. Changes to Terms</h2>
-    <p>We may update these Terms from time to time. Continued use of BakBak after changes constitutes your acceptance of the new Terms.</p>
+    <h2>10. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless BakBak and Devarshi Shah from any claims, damages, losses, or expenses (including legal fees) arising from your use of the app, your violation of these Terms, or your violation of any third-party rights.</p>
 
-    <h2>11. Contact</h2>
-    <p>For any questions about these Terms, contact us at: <a href="/cdn-cgi/l/email-protection#5122383c24253e3c28606511363c30383d7f323e3c"><span class="__cf_email__" data-cfemail="75061c1800011a180c4441351218141c195b161a18">[email&#160;protected]</span></a></p>
+    <h2>11. Governing Law and Jurisdiction</h2>
+    <p>These Terms of Use are governed by and construed in accordance with the laws of India, including the Information Technology Act, 2000 and applicable rules thereunder. Any disputes arising from these Terms or your use of BakBak shall be subject to the exclusive jurisdiction of the competent courts in Mumbai, Maharashtra, India.</p>
 
-    <footer>© 2026 BakBak by Devarshi Shah · All rights reserved</footer>
+    <h2>12. Changes to These Terms</h2>
+    <p>We may update these Terms of Use from time to time. We will notify users of material changes through an in-app notice. Your continued use of BakBak after any changes constitutes your acceptance of the updated Terms. The "Last updated" date at the top of this page will always reflect the most recent revision.</p>
+
+    <h2>13. Termination</h2>
+    <p>We reserve the right to suspend or permanently terminate your access to BakBak at any time, without notice, for conduct that we determine violates these Terms or is harmful to other users, us, or third parties. Upon termination, your right to use the app ceases immediately.</p>
+
+    <h2>14. Contact Us</h2>
+    <p>For any questions, complaints, or concerns about these Terms of Use, please contact:</p>
+    <ul>
+      <li><strong>Developer:</strong> Devarshi Shah</li>
+      <li><strong>App:</strong> BakBak</li>
+      <li><strong>Email:</strong> <a class="email-link" href="mailto:simutomy14@gmail.com">simutomy14@gmail.com</a></li>
+    </ul>
+
+    <div class="doc-footer">
+      &copy; 2026 BakBak by Devarshi Shah &nbsp;&middot;&nbsp; All rights reserved &nbsp;&middot;&nbsp; Mumbai, India
+    </div>
+
   </div>
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/
+<script>
+  function show(id, el) {
+    document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelectorAll('nav a').forEach(function(a) { a.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
